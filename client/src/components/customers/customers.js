@@ -21,6 +21,11 @@ class Customers extends Component {
     return (
       <div>
         <h1>Customers</h1>
+        <ul>
+          {this.state.customers.map(customer => (
+            <li key={customer.id}>{customer.firstName}</li>
+          ))}
+        </ul>
       </div>
     );
   }
