@@ -1,9 +1,9 @@
 const express = require("express");
 const db = require("../db");
 
-const router = express.Router();
+const app = express.Router();
 
-router.get("/", async (req, res, next) => {
+app.get("/api/clients", async (req, res) => {
   try {
     let results = await db.all();
     res.json(results);
@@ -13,4 +13,4 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-module.exports = router;
+module.exports = app;
