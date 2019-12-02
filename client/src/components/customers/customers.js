@@ -8,7 +8,7 @@ class Customers extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/customers")
+    fetch("/api/clients")
       .then(res => res.json())
       .then(customers =>
         this.setState({ customers }, () =>
@@ -23,7 +23,7 @@ class Customers extends Component {
         <h1>Customers</h1>
         <ul>
           {this.state.customers.map(customer => (
-            <li key={customer.id}>{customer.firstName}</li>
+            <li key={customer.id}>{customer.name}</li>
           ))}
         </ul>
       </div>
