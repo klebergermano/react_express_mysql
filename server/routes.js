@@ -13,4 +13,14 @@ app.get("/api/clients", async (req, res) => {
   }
 });
 
+app.get("/api/services", async (req, res) => {
+  try {
+    let results = await db.servicesTable.all();
+    res.json(results);
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
+});
+
 module.exports = app;
