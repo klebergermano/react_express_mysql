@@ -1,13 +1,10 @@
-const mysql = require("mysql");
-const config = require("./config");
+const connection = require("./config/connection");
 
-const pool = mysql.createPool(config);
+let clientsTable = {};
 
-let clientsDB = {};
-
-clientsDB.all = () => {
+clientsTable.all = async () => {
   return new Promise((resolve, reject) => {
-    pool.query("SELECT * FROM clients", (err, results) => {
+    connection.query("SELECT * FROM clients", (err, results) => {
       if (err) {
         return reject(err);
       }
@@ -16,4 +13,4 @@ clientsDB.all = () => {
   });
 };
 
-module.exports = clientsDB;
+module.exports = clientsTable;

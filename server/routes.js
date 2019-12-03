@@ -5,7 +5,7 @@ const app = express.Router();
 
 app.get("/api/clients", async (req, res) => {
   try {
-    let results = await db.all();
+    let results = await db.clientsTable.all();
     res.json(results);
   } catch (e) {
     console.log(e);

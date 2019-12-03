@@ -1,3 +1,5 @@
-const clientsDB = require("./clients");
+const clientsTable = require("./clients");
 
-module.exports = clientsDB;
+module.exports = {
+  clientsTable
+};
